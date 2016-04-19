@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>青葱校园导航</title>
+<link rel="stylesheet" type="text/css" href="css/xiaoyuandaohang.css">
+<script type="text/javascript" src="js/xiaoyuandaohang.js"></script>
+</head>
+<body>
+<!--
+校园网址导航基本框架
+整个页面
+<div id="page">
+
+	顶部信息:包括天气预报, 日期时间, 网页换肤
+	<div id="ceil"></div>
+
+	头部信息:包括网页信息
+	<div id="header"></div>
+    
+    搜索部分:包括搜索框以及按钮
+    <div id="search"></div>
+
+	主体内容:内容主体部分
+	<div id="main">
+    
+		常用网址链接部分
+    	<div id="common"></div>
+    
+    	其他网址链接部分
+    	<div id="other">
+    		左边部分包括联系我们微博, 微信的二维码部分
+        	<div id="otherLeft"></div>
+        
+        	右边部分包括分类网址链接部分
+        	<div id="otherRight"></div>
+    	</div>
+	</div>
+</div>
+底部信息:备案信息
+    <div id="footer"></div>
+--> 
+
+<!-- 整体页面 -->
+<div id="page"> 
+  
+  <!-- 顶部信息 -->
+  <div id="ceil">
+    <table>
+      <tr> 
+        <!-- 天气预报 -->
+        <td id="weather"><iframe allowtransparency="true" frameborder="0" width="280" height="24" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=3&z=1&t=0&v=0&d=1&bd=0&k=&f=008080&q=1&e=1&a=1&c=54511&w=280&h=24&align=center"></iframe></td>
+        
+        <!-- 日期时间 -->
+        <td id="time"><script>document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());
+setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+</script></td>
+        
+        <!-- 网页换肤 -->
+        <td id="skin"><font color="#009B4E">换肤:</font></td>
+        <td><a onclick="changeBackgroundColor(0)">间海蓝</a></td>
+        <td><a onclick="changeBackgroundColor(1)">暗青</a></td>
+        <td><a onclick="changeBackgroundColor(2)">亮海蓝</a></td>
+        <td><a onclick="changeBackgroundColor(3)">青绿</a></td>
+        <td><a onclick="changeBackgroundColor(4)">亮绿</a></td>
+        <td><a onclick="changeBackgroundColor(5)">暗金黄</a></td>
+      </tr>
+    </table>
+  </div>
+  
+  <!-- 头部信息 -->
+  <div id="header">
+    <h2>青葱校园导航<sub>&nbsp;&nbsp;西安邮电大学校园网址导航平台</sub></h2>
+  </div>
+  
+  <!-- 搜索部分 --> 
+  <!--reference="http://help.baidu.com/question?prod_en=search&class=500&id=1000664" -->
+  <div id="search">
+    <form action="http://www.baidu.com/baidu" target="_blank">
+      <table>
+        <tr>
+          <td><!-- <input name="tn" type="hidden" value="baidu">  
+          <a href="http://www.baidu.com/">
+		<img src="http://img.baidu.com/img/logo-80px.gif" alt="Baidu" align="bottom" border="0"></a>-->
+            
+            <input type="text" id="searchBox" name="word" style="font-size:14px">
+            <input type="submit" value="百度一下" id="submitBtn"></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  
+  <!-- 主体内容 -->
+  <div id="main"> 
+    
+    <!-- 常用网址导航 -->
+    <div id="common">
+      <p align="left" id="commonSite">常用网址</p>
+      <table height="200" width="1000">
+        <tr>
+          <td><a href="http://202.117.128.8/" target="_blank">西邮官网</a></td>
+          <td><a href="http://222.24.19.202/" target="_blank">教务系统</a></td>
+          <td><a href="http://lib.xupt.edu.cn/" target="_blank">图书馆</a></td>
+          <td><a href="http://222.24.3.7:8080/reader/login.jsp" target="_blank">图书续借</a></td>
+          <td><a href="http://gr.xupt.edu.cn/" target="_blank">研究生院</a></td>
+          <td><a href="http://yddx.boxkj.com/" target="_blank">体育部</a></td>
+        </tr>
+        <tr>
+          <td><a href="http://tieba.baidu.com/f?kw=%CE%F7%B0%B2%D3%CA%B5%E7" target="_blank">西邮贴吧</a></td>
+          <td><a href="http://www.changxiaoyuan.com/" target="_blank">畅校园</a></td>
+          <td><a href="http://start.xiyou.ca/" target="_blank">西邮导航</a></td>
+          <td><a href="http://www.xiyoulinux.org/" target="_blank">西邮Linux</a></td>
+          <td><a href="http://lib.changxiaoyuan.com/" target="_blank">西邮图书馆</a></td>
+          <td><a href="http://elearn.xupt.edu.cn/eol/homepage/common/index.jsp" target="_blank">网络教学平台</a></td>
+        </tr>
+        <tr>
+          <td><a href="http://xiyou.tsk.erya100.com/studentLogin" target="_blank">尔雅课</a></td>
+          <td><a href="http://www.xiyoumobile.com/" target="_blank">3G实验室</a></td>
+          <td><a href="http://www.tiaozhanbei.net/" target="_blank">挑战杯</a></td>
+          <td><a href="http://www.chsi.com.cn/cet/" target="_blank">四六级</a></td>
+          <td><a href="http://sk.neea.edu.cn/jsjdj/" target="_blank">计算机考试</a></td>
+          <td><a href="http://www.ruankao.org.cn/" target="_blank">软考官网</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://life.baifubao.com/sj" target="_blank">手机充值</a></td>
+          <td><a href="https://upay.10010.com/npfweb/npfcellweb/phone_recharge_fill.htm" target="_blank">联通宽带</a></td>
+          <td><a href="http://www.sx-10000.com/" target="_blank">电信宽带</a></td>
+          <td><a href="http://www.cmcc-edu.net/" target="_blank">CMCC-EDU</a></td>
+          <td><a href="http://www.12306.cn/mormhweb/" target="_blank">火车票</a></td>
+          <td><a href="http://www.kuaidi100.com/" target="_blank">快递查询</a></td>
+        </tr>
+        <tr>
+          <td><a href="http://tieba.baidu.com/" target="_blank">百度贴吧</a></td>
+          <td><a href="http://www.renren.com/" target="_blank">人人网</a></td>
+          <td><a href="http://weibo.com/" target="_blank">新浪微博</a></td>
+          <td><a href="http://qzone.qq.com/" target="_blank">QQ空间</a></td>
+          <td><a href="http://www.acfun.tv/" target="_blank">AcFun</a></td>
+          <td><a href="http://www.bilibili.com/" target="_blank">哔哩哔哩</a></td>
+        </tr>
+      </table>
+    </div>
+    
+    <!-- 其他网址导航部分 -->
+    <div id="other"> 
+      
+      <!-- 左边部分包括联系我们微博, 微信的二维码部分 -->
+      <div id="otherLeft">
+        <p id="weibo">我们的微博</p>
+        <img src="image/weibo.png"/>
+        <p id="weixin">我们的微信</p>
+        <img src="image/weixin.png"/> </div>
+      
+      <!-- 右边部分包括分类网址链接部分 -->
+      <div id="otherRight">
+        <ul>
+          <li>常用</li>
+          <li>
+            <ul>
+              <li><a href="https://www.baidu.com/" target="_blank">百度</a></li>
+              <li><a href="http://www.qq.com/" target="_blank">腾讯网</a></li>
+              <li><a href="http://www.163.com/" target="_blank">网易</a></li>
+              <li><a href="http://www.sina.com.cn/" target="_blank">新浪网</a></li>
+              <li><a href="http://www.ifeng.com/" target="_blank">凤凰网</a></li>
+              <li><a href="http://www.sohu.com/" target="_blank">搜狐网</a></li>
+              <li><a href="http://www.xinhuanet.com/" target="_blank">新华网</a></li>
+              <li><a href="http://www.people.com.cn/" target="_blank">人民网</a></li>
+            </ul>
+          </li>
+        </ul>
+        <br/>
+        <ul>
+          <li>购物</li>
+          <li>
+            <ul>
+              <li><a href="https://www.taobao.com/" target="_blank">淘宝网</a></li>
+              <li><a href="https://www.tmall.com/" target="_blank">天猫</a></li>
+              <li><a href="http://www.jd.com/" target="_blank">京东商城</a></li>
+              <li><a href="http://www.dangdang.com/" target="_blank">当当网</a></li>
+              <li><a href="http://www.amazon.cn/" target="_blank">亚马逊</a></li>
+              <li><a href="http://bj.jumei.com/" target="_blank">聚美优品</a></li>
+              <li><a href="http://www.vip.com/" target="_blank">唯品会</a></li>
+              <li><a href="http://www.yhd.com/" target="_blank">1号店</a></li>
+            </ul>
+          </li>
+        </ul>
+        <br/>
+        <ul>
+          <li>团购</li>
+          <li>
+            <ul>
+              <li><a href="http://xa.nuomi.com/" target="_blank">百度糯米</a></li>
+              <li><a href="http://xianyang.meituan.com/" target="_blank">美团</a></li>
+              <li><a href="http://v5.ele.me/?force" target="_blank">饿了么</a></li>
+              <li><a href="http://www.gewara.com/" target="_blank">格瓦拉</a></li>
+              <li><a href="http://www.qunar.com/" target="_blank">去哪儿网</a></li>
+              <li><a href="http://www.ctrip.com/" target="_blank">携程</a></li>
+              <li><a href="http://www.dianping.com/" target="_blank">大众点评网</a></li>
+            </ul>
+          </li>
+        </ul>
+        <br/>
+        <ul>
+          <li>视频</li>
+          <li>
+            <ul>
+              <li><a href="http://www.qiyi.com/ " target="_blank">爱奇艺</a></li>
+              <li><a href="http://www.tudou.com/" target="_blank">土豆网</a></li>
+              <li><a href="http://www.youku.com/" target="_blank">优酷网</a></li>
+              <li><a href="http://tv.sohu.com/" target="_blank">搜狐视频</a></li>
+              <li><a href="http://tv.sohu.com/" target="_blank">乐视网</a></li>
+              <li><a href="http://v.qq.com/" target="_blank">腾讯视频</a></li>
+              <li><a href="http://www.1905.com/" target="_blank">1905</a></li>
+            </ul>
+          </li>
+        </ul>
+        <br/>
+        <ul>
+          <li>音乐</li>
+          <li>
+            <ul>
+              <li><a href="http://music.baidu.com/" target="_blank">百度MP3</a></li>
+              <li><a href="http://y.qq.com/" target="_blank">QQ音乐</a></li>
+              <li><a href="http://www.kugou.com/" target="_blank">酷狗音乐</a></li>
+              <li><a href="http://www.kuwo.cn/" target="_blank">酷我音乐盒</a></li>
+              <li><a href="http://www.dongting.com/" target="_blank">天天动听</a></li>
+              <li><a href="http://www.xiami.com/" target="_blank">虾米音乐</a></li>
+            </ul>
+          </li>
+        </ul>
+        <br/>
+        <ul>
+          <li>社交</li>
+          <li>
+            <ul>
+              <li><a href="http://tieba.baidu.com/	" target="_blank">百度贴吧</a></li>
+              <li><a href="http://weibo.com/" target="_blank">新浪微博</a></li>
+              <li><a href="https://wx.qq.com/" target="_blank">微信网页版</a></li>
+              <li><a href="http://hi.baidu.com/" target="_blank">百度空间</a></li>
+              <li><a href="http://qzone.qq.com/	" target="_blank">QQ空间</a></li>
+              <li><a href="http://www.renren.com/" target="_blank">人人网</a></li>
+              <li><a href="http://www.douban.com/" target="_blank">豆瓣</a></li>
+            </ul>
+          </li>
+        </ul>
+        <br/>
+        <ul>
+          <li>邮箱</li>
+          <li>
+            <ul>
+              <li><a href="https://mail.qq.com/" target="_blank">QQ邮箱</a></li>
+              <li><a href="http://mail.163.com/" target="_blank">网易邮箱</a></li>
+              <li><a href="http://mail.126.com/" target="_blank">网易126邮箱</a></li>
+              <li><a href="http://mail.sina.com.cn/" target="_blank">新浪邮箱</a></li>
+              <li><a href="http://www.yeah.net/" target="_blank">Yeah邮箱</a></li>
+              <li><a href="http://www.foxmail.com/" target="_blank">FoxMail</a></li>
+            </ul>
+          </li>
+        </ul>
+        <br/>
+        <ul>
+          <li>考试</li>
+          <li>
+            <ul>
+              <li><a href="http://sk.neea.edu.cn/" target="_blank">计算机等级考试</a></li>
+              <li><a href=" http://www.cet.edu.cn/" target="_blank">英语四六级</a></li>
+              <li><a href="http://www.shaanxirk.com/ " target="_blank">软考官网</a></li>
+              <li><a href="http://www.chinakaoyan.com/" target="_blank">中国考研网</a></li>
+              <li><a href="http://www.moj.gov.cn/sfkss/node_226.htm" target="_blank">国家司法考试</a></li>
+            </ul>
+          </li>
+        </ul>
+        <br/>
+        <ul>
+          <li>慕课</li>
+          <li>
+            <ul>
+              <li><a href="http://www.imooc.com/" target="_blank">慕课网</a></li>
+              <li><a href="http://www.jikexueyuan.com/" target="_blank">极客学院</a></li>
+              <li><a href="http://mooc.guokr.com/" target="_blank">MOOC学院</a></li>
+              <li><a href="http://www.chuanke.com/" target="_blank">百度传课</a></li>
+              <li><a href="https://www.shiyanlou.com/" target="_blank">实验楼</a></li>
+              <li><a href="http://www.miaov.com/2013/" target="_blank">妙味课堂</a></li>
+              <!-- <li><a href="http://www.maiziedu.com/" target="_blank">麦子学院</a></li>
+              <li><a href="http://edu.51cto.com/" target="_blank">51CTO学院</a></li>-->
+            </ul>
+          </li>
+        </ul>
+        <br/>
+        <ul>
+          <li>求职</li>
+          <li>
+            <ul>
+              <li><a href="www.lagou.com/" target="_blank">拉勾网</a></li>
+              <li><a href="http://www.neitui.me/" target="_blank">内推网</a></li>
+              <li><a href="http://www.zhaopin.com/" target="_blank">智联招聘</a></li>
+              <li><a href="http://www.51job.com/" target="_blank">前程无忧</a></li>
+              <li><a href="http://www.chinahr.com/" target="_blank">中华英才网</a></li>
+              <li><a href="http://www.liepin.com/" target="_blank">猎聘网</a></li>
+              <!-- <li><a href="http://www.yingjiesheng.com/" target="_blank">应届生求职网</a></li>
+              <li><a href="http://www.dajie.com/" target="_blank">大街网</a></li>-->
+            </ul>
+          </li>
+        </ul>
+        <br/>
+        <ul>
+          <li>编程</li>
+          <li>
+            <ul>
+              <li><a href="http://www.csdn.net/" target="_blank">CSDN</a></li>
+              <li><a href="http://www.oschina.net/" target="_blank">开源中国</a></li>
+              <li><a href="http://www.51cto.com/" target="_blank">51CTO</a></li>
+              <li><a href="http://www.gn00.com/" target="_blank">技术宅社区</a></li>
+              <li><a href="http://www.iteye.com/" target="_blank">ITEYE</a></li>
+              <li><a href="http://bbs.bccn.net/" target="_blank">编程论坛</a></li>
+            </ul>
+          </li>
+        </ul>
+        <br/>
+        <ul>
+          <li>前端</li>
+          <li>
+            <ul>
+              <li><a href="http://www.w3school.com.cn/" target="_blank">W3school</a></li>
+              <li><a href="http://www.w3cfuns.com/" target="_blank">W3cfuns</a></li>
+              <li><a href="http://www.html5china.com/" target="_blank">HTML5中文网</a></li>
+              <li><a href="http://www.w3ctech.com/" target="_blank">w3ctech</a></li>
+              <li><a href="http://www.cnblogs.com/" target="_blank">博客园</a></li>
+              <li><a href="http://www.iteye.com/" target="_blank">ITeye</a></li>
+            </ul>
+          </li>
+        </ul>
+        <br/>
+        <ul>
+          <li>游戏</li>
+          <li>
+            <ul>
+              <li><a href="http://lol.qq.com/" target="_blank">英雄联盟</a></li>
+              <li><a href="http://www.wowchina.com/" target="_blank">魔兽世界</a></li>
+              <li><a href="http://www.hearthstone.com.cn/landing" target="_blank">炉石传说</a></li>
+              <li><a href="http://csol.tiancity.com/homepage/v5/" target="_blank">反恐精英</a></li>
+              <li><a href="http://cf.qq.com/" target="_blank">穿越火线</a></li>
+              <li><a href="http://wot.kongzhong.com/" target="_blank">坦克世界</a></li>
+            </ul>
+          </li>
+        </ul>
+        <br/>
+        <ul>
+          <li>兼职</li>
+          <li>
+            <ul>
+              <li><a href="http://www.jianzhi8.com/" target="_blank">兼职吧</a></li>
+              <li><a href="http://www.jzdd.net/" target="_blank">兼职地带</a></li>
+              <li><a href="http://www.jianzhimao.com/ctrlcity/changeCity.html" target="_blank">兼职猫</a></li>
+              <li><a href="http://www.521job.cn/" target="_blank">勤工俭学网</a></li>
+              <li><a href="http://xianyang.ganji.com/" target="_blank">赶集网</a></li>
+              <li><a href="xa.58.com/" target="_blank">58同城</a></li>
+            </ul>
+          </li>
+        </ul>
+        <br/>
+        <ul>
+          <li>英语</li>
+          <li>
+            <ul>
+              <li><a href="http://www.hjenglish.com/" target="_blank">沪江英语</a></li>
+              <li><a href="http://www.oxford.com.cn/" target="_blank">牛津英语网</a></li>
+              <li><a href="http://www.ew.com.cn/" target="_blank">英语周报</a></li>
+              <li><a href="http://www.eng24.com/" target="_blank">环球英语</a></li>
+              <li><a href="http://www.yyqh.net/" target="_blank">英语启航</a></li>
+              <li><a href="http://www.xdf.cn/" target="_blank">新东方</a></li>
+              <li><a href="http://www.fltrp.com/" target="_blank">外研社</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 底部信息:备案信息 -->
+<div id="footer"> <br />
+  <p>Copyright @2015-2016<a href="#">青葱校园导航</a>All Right Reserved</p>
+  <p><a href="http://www.miitbeian.gov.cn/">陕ICP备15011174号</a></p>
+</div>
+</body>
+</html>
